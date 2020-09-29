@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useMediaquery } from '../../../hooks'
 import { Breakpoints } from '../../../styles'
 
@@ -18,6 +18,13 @@ export const StyledButton = styled.button`
   &:active{
     transform: scale(.9)
   }
+  ${props => props.outlined && css`
+    background: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: ${({ theme }) => theme.text};
+    box-shadow: none;
+  `}
 
   @media (min-width: ${Breakpoints.tablet}){
     max-width: 400px;

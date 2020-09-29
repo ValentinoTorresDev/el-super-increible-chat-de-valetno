@@ -1,5 +1,5 @@
 import { ContainerRegister } from './styles'
-import { TitleSEO, Input, Button } from '../../atoms'
+import { TitleSEO, Input, Button, Text } from '../../atoms'
 import { useInput } from '../../../hooks'
 
 const Register = () => {
@@ -28,6 +28,7 @@ const Register = () => {
       <Button fullwidth>
         Crear mi cuenta
       </Button>
+      <Text />
     </ContainerRegister>
   )
 }
