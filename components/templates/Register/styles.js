@@ -8,3 +8,9 @@ export const ContainerRegister = styled.section`
   height: 100%;
   padding: 20px;
 `
+
+export const ContainerSocialRegister = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`

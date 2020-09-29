@@ -1,4 +1,4 @@
-import { ContainerRegister } from './styles'
+import { ContainerRegister, ContainerSocialRegister } from './styles'
 import { TitleSEO, Input, Button, Text, ButtonSocialRegister, Icon } from '../../atoms'
 import { useInput } from '../../../hooks'
 import { Google, Facebook, Github } from '../../../icons'
@@ -31,9 +31,17 @@ const Register = () => {
       <Text m={{ mobile: '20px 0', tablet: '20px 0', desktop: '20px 0' }}>
         O regístrate con
       </Text>
-      <ButtonSocialRegister />
-      <Google />
-      <Icon />
+      <ContainerSocialRegister>
+        <ButtonSocialRegister>
+          <Icon height='32px'><Google /></Icon>
+        </ButtonSocialRegister>
+        <ButtonSocialRegister m='0 20px'>
+          <Icon height='32px'><Facebook /></Icon>
+        </ButtonSocialRegister>
+        <ButtonSocialRegister>
+          <Icon height='32px'><Github /></Icon>
+        </ButtonSocialRegister>
+      </ContainerSocialRegister>
     </ContainerRegister>
   )
 }

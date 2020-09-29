@@ -2,7 +2,7 @@ import { StyledButtonRegister } from './styles'
 
 const ButtonSocialRegister = (props) => {
   return (
-    <StyledButtonRegister>
+    <StyledButtonRegister {...props}>
       {props.children}
     </StyledButtonRegister>
   )
