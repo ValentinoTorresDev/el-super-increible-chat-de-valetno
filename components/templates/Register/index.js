@@ -28,7 +28,9 @@ const Register = () => {
       <Button fullwidth>
         Crear mi cuenta
       </Button>
-      <Text />
+      <Text m={{ mobile: '20px 0', tablet: '20px 0', desktop: '20px 0' }}>
+        O regístrate con
+      </Text>
     </ContainerRegister>
   )
 }

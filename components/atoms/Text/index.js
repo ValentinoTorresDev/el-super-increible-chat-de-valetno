@@ -1,8 +1,10 @@
-const Text = () => {
+import { StyledText } from './styles'
+
+const Text = (props) => {
   return (
-    <div>
-      Text
-    </div>
+    <StyledText {...props}>
+      {props.children}
+    </StyledText>
   )
 }
 
