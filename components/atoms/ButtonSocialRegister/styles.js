@@ -12,6 +12,11 @@ export const StyledButtonRegister = styled.button`
   align-items: center;
   margin: ${({ m = '0px' }) => useMediaquery(m, 'mobile')};
   padding: ${({ p = '0px' }) => useMediaquery(p, 'mobile')};
+  cursor: pointer;
+  transition: all 0.15s linear;
+  &:active{
+    transform: scale(.9)
+  }
 
   @media (${Breakpoints.tablet}) {
     margin: ${({ m = '0px' }) => useMediaquery(m, 'tablet')};
