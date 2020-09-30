@@ -2,7 +2,8 @@ import { ContainerRegister, ContainerSocialRegister, Container } from './styles'
 import { TitleSEO, Input, Button, Text, ButtonSocialRegister, Icon } from '../../atoms'
 import { useInput } from '../../../hooks'
 import { Google, Facebook, Github } from '../../../icons'
-const Register = () => {
+
+const TemplateSignUp = () => {
   const email = useInput('')
   const password = useInput('')
 
@@ -58,4 +59,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default TemplateSignUp
