@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { ContainerRegister, ContainerSocialRegister, Container } from './styles'
-import { TitleSEO, Input, Button, Text, ButtonSocialRegister, Icon } from '../../atoms'
+import { TitleSEO, Input, Button, Text, ButtonSocialRegister, Icon, LinkButton } from '../../atoms'
 import { useInput } from '../../../hooks'
 import { Google, Facebook, Github } from '../../../icons'
 import { useAuth } from '../../../context/authContext'
@@ -60,9 +60,9 @@ const TemplateSignUp = () => {
         <Text m='20px 0 0 0' align='center'>
           ¿Ya tienes cuenta?
         </Text>
-        <Button fullwidth outlined>
+        <LinkButton to='/login' fullwidth outlined p={0}>
           Iniciar Sesión
-        </Button>
+        </LinkButton>
       </Container>
     </ContainerRegister>
   )
