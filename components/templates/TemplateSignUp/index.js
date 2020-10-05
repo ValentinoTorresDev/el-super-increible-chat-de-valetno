@@ -1,16 +1,25 @@
+import { useRouter } from 'next/router'
 import { ContainerRegister, ContainerSocialRegister, Container } from './styles'
 import { TitleSEO, Input, Button, Text, ButtonSocialRegister, Icon } from '../../atoms'
 import { useInput } from '../../../hooks'
 import { Google, Facebook, Github } from '../../../icons'
+import { useAuth } from '../../../context/authContext'
 
 const TemplateSignUp = () => {
+  const router = useRouter()
+
   const email = useInput('')
   const password = useInput('')
+
+  const { user, signinWithEmailPassword, signinWithGoogle, siginWithFacebook, singinWithGitBub } = useAuth()
+
+  user && router.push('/')
+
+  console.log(user)
 
   return (
     <ContainerRegister>
       <TitleSEO>Registro</TitleSEO>
-
       <Container>
         <Input
           fullwidth
@@ -28,20 +37,20 @@ const TemplateSignUp = () => {
           value={password.value}
           onChange={password.onChange}
         />
-        <Button fullwidth>
-        Crear mi cuenta
+        <Button fullwidth onClick={() => signinWithEmailPassword(email.value, password.value)}>
+          Crear mi cuenta
         </Button>
         <Text m='20px 0' align='center'>
         O regístrate con
         </Text>
         <ContainerSocialRegister>
           <ButtonSocialRegister>
-            <Icon height='32px'><Google /></Icon>
+            <Icon height='32px' onClick={signinWithGoogle}><Google /></Icon>
           </ButtonSocialRegister>
-          <ButtonSocialRegister m='0 20px'>
+          <ButtonSocialRegister m='0 20px' onClick={siginWithFacebook}>
             <Icon height='32px'><Facebook /></Icon>
           </ButtonSocialRegister>
-          <ButtonSocialRegister>
+          <ButtonSocialRegister onClick={singinWithGitBub}>
             <Icon height='32px'><Github /></Icon>
           </ButtonSocialRegister>
         </ContainerSocialRegister>
@@ -52,7 +61,7 @@ const TemplateSignUp = () => {
           ¿Ya tienes cuenta?
         </Text>
         <Button fullwidth outlined>
-        Iniciar Sesión
+          Iniciar Sesión
         </Button>
       </Container>
     </ContainerRegister>
