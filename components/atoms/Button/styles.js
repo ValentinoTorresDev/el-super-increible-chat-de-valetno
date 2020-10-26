@@ -3,7 +3,7 @@ import { useMediaquery } from '../../../hooks'
 import { Breakpoints } from '../../../styles'
 
 export const StyledButton = styled.button`
-  width: ${({ fullwidth }) => fullwidth ? '100%' : 'auto'};
+  width: ${({ fullwidth, width }) => fullwidth ? '100%' : width || 'auto'};
   height: 40px;
   margin: ${({ m = '20px 0 0 0' }) => useMediaquery(m, 'mobile')};
   padding: ${({ p = '0px 20px' }) => useMediaquery(p, 'mobile')};

@@ -1,8 +1,8 @@
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 // Iniciamos firebase
-
 if (typeof window !== 'undefined' && !firebase.apps.length) {
   firebase.initializeApp({
     apiKey: 'AIzaSyCNEoYnKdq6dq56Ap9MQCxmgokFreZV_Vc',
@@ -19,44 +19,3 @@ if (typeof window !== 'undefined' && !firebase.apps.length) {
 }
 
 export { firebase }
-
-// Mapeamos el usuario
-
-// const mapUserFromFirebaseAuth = (user) => {
-//   if (user) {
-//     const { displayName, email, photoURL } = user
-//     return {
-//       // avatar: photoURL,
-//       // username: displayName,
-//       email
-//     }
-//   }
-// }
-
-// Validar si el usuario se encuentra logueado
-
-// export const onAuthStateChange = (onChange) => {
-//   return firebase
-//     .auth()
-//     .onAuthStateChanged(user => {
-//       const normalizedUser = mapUserFromFirebaseAuth(user)
-//       onChange(normalizedUser)
-//     })
-// }
-
-// Autenticación con GitHub
-
-// export const loginWithGitHub = () => {
-//   const gitHubProvider = new firebase.auth.GithubAuthProvider()
-//   return firebase
-//     .auth()
-//     .signInWithPopup(gitHubProvider)
-// }
-
-// Autenticación con Email y password
-
-// export const singUpWithEmailPassword = (email, password) => {
-//   return firebase
-//     .auth()
-//     .createUserWithEmailAndPassword(email, password)
-// }

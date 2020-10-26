@@ -8,14 +8,22 @@ export const StyledIcon = styled.span`
   padding: ${({ p = '0px' }) => useMediaquery(p, 'mobile')};
   & svg{
     width: auto;
-    height: ${({ height = 'auto' }) => height};
+    height: ${({ height = 'auto' }) => useMediaquery(height, 'mobile')};
   }
-  @media (${Breakpoints.tablet}) {
-    margin: ${({ m = '0px' }) => useMediaquery(m, 'laptop')};
-    padding: ${({ p = '0px' }) => useMediaquery(p, 'laptop')};
-  }
-  @media (${Breakpoints.desktop}) {
+
+  @media (min-width: ${Breakpoints.tablet}) {
     margin: ${({ m = '0px' }) => useMediaquery(m, 'tablet')};
     padding: ${({ p = '0px' }) => useMediaquery(p, 'tablet')};
+    & svg{
+      height: ${({ height = 'auto' }) => useMediaquery(height, 'tablet')};
+    }
+  }
+
+  @media (min-width: ${Breakpoints.desktop}) {
+    margin: ${({ m = '0px' }) => useMediaquery(m, 'desktop')};
+    padding: ${({ p = '0px' }) => useMediaquery(p, 'desktop')};
+    & svg{
+      height: ${({ height = 'auto' }) => useMediaquery(height, 'desktop')};
+    }
   } 
 `

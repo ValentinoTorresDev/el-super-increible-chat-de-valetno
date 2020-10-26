@@ -11,11 +11,13 @@ const TemplateSignUp = () => {
   const email = useInput('')
   const password = useInput('')
 
-  const { user, signinWithEmailPassword, signinWithGoogle, siginWithFacebook, singinWithGitBub } = useAuth()
+  const { user, newUser, signinWithEmailPassword, signinWithGoogle, siginWithFacebook, singinWithGitBub } = useAuth()
 
-  user && router.push('/')
-
-  console.log(user)
+  if (newUser) {
+    router.push('/welcome')
+  } else if (user) {
+    router.push('/')
+  }
 
   return (
     <ContainerRegister>

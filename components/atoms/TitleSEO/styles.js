@@ -9,6 +9,7 @@ export const StyledTitleSeo = styled.h1`
   line-height: ${({ lh = '1' }) => lh};
   margin: ${({ m = '0px' }) => useMediaquery(m, 'mobile')};
   padding: ${({ p = '0px' }) => useMediaquery(p, 'mobile')};
+  text-align: ${({ align = 'left' }) => align};
   
   @media (min-width: ${Breakpoints.tablet}) {
     font-size: ${({ size = '32px' }) => useMediaquery(size, 'tablet')};

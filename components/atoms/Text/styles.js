@@ -11,13 +11,13 @@ export const StyledText = styled.p`
   padding: ${({ p = '0px' }) => useMediaquery(p, 'mobile')};
   text-align: ${({ align = 'left' }) => align};
 
-  @media (${Breakpoints.tablet}) {
+  @media (min-width: ${Breakpoints.tablet}) {
     font-size: ${({ size = '16px' }) => useMediaquery(size, 'tablet')};
     line-height: ${({ lh = '1' }) => useMediaquery(lh, 'tablet')};
     margin: ${({ m = '0px' }) => useMediaquery(m, 'tablet')};
     padding: ${({ p = '0px' }) => useMediaquery(p, 'tablet')};
   }
-  @media (${Breakpoints.desktop}) {
+  @media (min-width: ${Breakpoints.desktop}) {
     font-size: ${({ size = '18px' }) => useMediaquery(size, 'desktop')};
     line-height: ${({ lh = '1' }) => useMediaquery(lh, 'desktop')};
     margin: ${({ m = '0px' }) => useMediaquery(m, 'desktop')};
